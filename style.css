@@ -7,7 +7,7 @@ body{
     text-align:center;
 }
 input[type="submit"]{
-background-color: black;
+background-color: rgba(25, 23, 23, 0.842);
 border:none;
 color:white;
 padding:12px 24px;
