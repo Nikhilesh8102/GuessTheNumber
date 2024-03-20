@@ -66,6 +66,7 @@ function displayMessage(message){
     lowOrHigh.style.color = 'yellow';
     res.appendChild(lowOrHigh);
     if(message === 'You guessed it right!'){
+        res.removeChild(lowOrHigh);
         endGame();
     }
 }
