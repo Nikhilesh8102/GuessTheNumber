@@ -1,3 +1,4 @@
+
 let randomNumber = Math.floor(Math.random()*100+1)
 const userInput = document.querySelector('input');
 const submitButton = document.querySelector('.submit');
@@ -38,7 +39,7 @@ function validateGuess(guess){
 function checkGuess(guess){
     if(guess === randomNumber){
         displayMessage(`You guessed it right!`);
-        endGame();
+        
     }
     else if(guess < randomNumber){
         displayMessage('Guessed Number is Low');
@@ -47,6 +48,7 @@ function checkGuess(guess){
         displayMessage('Guessed Number is High');
     }
 }
+
 
 function displayGuess(guess){
 prevGuessSlot.innerText += `${ guess},   `;
@@ -57,8 +59,15 @@ guessesRem.innerText = `${11-guesses}`;
 }
 
 function displayMessage(message){
+
     lowOrHigh.innerText = message;
+    lowOrHigh.style.fontSize = '20px';
+    lowOrHigh.style.fontWeight = '500';
+    lowOrHigh.style.color = 'yellow';
     res.appendChild(lowOrHigh);
+    if(message === 'You guessed it right!'){
+        endGame();
+    }
 }
 
 function endGame(){
@@ -68,6 +77,17 @@ function endGame(){
     h3.id = 'newGame';
     h3.style.backgroundColor = 'rgba(25, 23, 23, 0.842)';
     h3.style.padding = '8px 20px';
+    h3.style.width = 'fit-content';
+    h3.style.margin='auto';
+    
+    
+h3.addEventListener('mouseenter', function() {
+    this.style.cursor = 'pointer';
+  });
+  
+  h3.addEventListener('mouseleave', function() {
+    this.style.cursor = 'auto';
+  });
     h3.style.borderRadius = '12px';
     res.appendChild(h3);
     playGame=false;
