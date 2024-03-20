@@ -66,8 +66,7 @@ function displayMessage(message){
     lowOrHigh.style.color = 'yellow';
     res.appendChild(lowOrHigh);
     if(message === 'You guessed it right!'){
-        res.removeChild(lowOrHigh);
-        endGame();
+       endGame();
     }
 }
 
@@ -98,6 +97,7 @@ h3.addEventListener('mouseenter', function() {
 function newGame(){
 const newGameButton = document.querySelector('#newGame');
 newGameButton.addEventListener('click',e=>{
+     res.removeChild(lowOrHigh);
     randomNumber =  Math.floor(Math.random()*100+1);
     prevGuesses = [];
     guesses = 1;
