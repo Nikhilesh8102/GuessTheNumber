@@ -66,6 +66,9 @@ function endGame(){
     userInput.setAttribute('disabled','');
     h3.innerText = 'Start a New Game';
     h3.id = 'newGame';
+    h3.style.backgroundColor = 'rgba(25, 23, 23, 0.842)';
+    h3.style.padding = '8px 20px';
+    h3.style.borderRadius = '12px';
     res.appendChild(h3);
     playGame=false;
     newGame();
